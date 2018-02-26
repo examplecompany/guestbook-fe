@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+ name: guestbook-frontend-2
+ labels:
+   app: guestbook-frontend
+spec:
+ containers:
+   - image: docker.io/examplecompany/guestbook-fe:v1
+     name: guestbook-frontend
+     ports:
+       - containerPort: 80
+         name: http
+         protocol: TCP

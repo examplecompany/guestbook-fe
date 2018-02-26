@@ -1,0 +1,20 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    app: guestbook-frontend
+  name: guestbook-frontend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: guestbook-frontend
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: guestbook-frontend
+    spec:
+      containers:
+      - image: docker.io/examplecompany/guestbook-fe:v1
+        name: guestbook-frontend
